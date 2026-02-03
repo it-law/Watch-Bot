@@ -1,0 +1,14 @@
+# Project Standards for AI News Digest Telegram Bot
+
+- Use Python 3.11+ and Poetry.
+- Keep 100% type hints and Google-style docstrings for all public modules/classes/functions.
+- Async-first: all I/O should be async/await; no blocking calls.
+- Clean Architecture: keep handlers, services, repositories, models, core, and config separated.
+- Dependency injection only via constructors; avoid global state.
+- Log with logging.getLogger(__name__) in each module.
+- Errors: use custom exceptions (BaseError, ValidationError, ExternalAPIError).
+- Security: load secrets from .env using python-dotenv; never hardcode secrets.
+- Database: PostgreSQL via SQLAlchemy 2.0 async patterns and psycopg.
+- HTTP: use aiohttp for external calls.
+- Formatting: black (88 chars) and ruff; type-check with mypy.
+- Testing: pytest; mirror src/ structure under tests/; mock external services.
